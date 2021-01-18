@@ -73,6 +73,8 @@ public class RestReportingHelper {
         if (shouldRecordResponseBodyFor(response)) {
             String renderedBody = new Prettifier().getPrettifiedBodyIfPossible(
                     (ResponseOptions) response.getBody(), response.getBody());
+            
+            System.out.println("RENDERED BODYYYYY:" +renderedBody);
 
             restQuery = restQuery.withResponse(renderedBody.isEmpty() ? response.asString() : renderedBody);
         }
